@@ -1,7 +1,7 @@
 export default function CardProdutos(props) {
   return (
     <div className="card text-center h-100">
-      <img className="card-image h-100" src={`produtos/${props.nome}.png`} />
+      <img className="card-image" src={props.img} alt={props.nome} style={{ width: '305px', height: '214px' }} />
       <div className="card-body d-flex flex-column justify-content-between">
         <div>
           <h5 className="card-title">{props.nome}</h5>

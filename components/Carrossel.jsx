@@ -8,13 +8,13 @@ export default function Carrossel() {
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src="carrossel/1.png" className="d-block w-100" alt="..."/>
+                    <img src="carrossel/1.png" className="d-block w-100" style={{height: '504px'}} alt="..."/>
                 </div>
                 <div className="carousel-item">
-                    <img src="carrossel/2.png" className="d-block w-100" alt="..."/>
+                    <img src="carrossel/2.png" className="d-block w-100" style={{height: '504px'}} alt="..."/>
                 </div>
                 <div className="carousel-item">
-                    <img src="carrossel/3.png" className="d-block w-100" alt="..."/>
+                    <img src="carrossel/3.png" className="d-block w-100" style={{height: '504px'}} alt="..."/>
                 </div>
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
