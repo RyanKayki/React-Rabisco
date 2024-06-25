@@ -8,6 +8,7 @@ export default function CardList({ produtos }) {
                 {produtos.map((produto, index) => (
                     <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                         <CardProdutos
+                            id={produto[0]}
                             img={produto[1]}
                             nome={produto[2]}
                             descricao={produto[3]}

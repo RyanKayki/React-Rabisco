@@ -18,8 +18,9 @@ export default function CardProdutos(props) {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          <Link href={`/produtos/${props.id}`}>{props.nome}</Link>
-          <ArrowOutwardIcon style={{ marginRight: '5px' }} />
+          <Link href={`${props.id}`}>{props.nome}
+          <ArrowOutwardIcon style={{ marginRight: '5px', marginBottom: '5px' }} />
+          </Link>
         </Typography>
         <Typography variant="body1" color="text.secondary">
           R$ {props.preco.toFixed(2)} 
