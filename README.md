@@ -1,40 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Documentação do Projeto PAPELARIA RABISCO
 
-## Getting Started
+## Descrição do Projeto
 
-First, run the development server:
+A empresa "Papelaria Rabisco" necessita de um sistema para gerenciar seu estoque de produtos. Este sistema permitirá o cadastro de novos produtos, a alteração de quantidade e preço, a listagem de todos os produtos cadastrados e a exclusão de produtos do estoque.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tecnologias Utilizadas
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Python: Linguagem de programação.
+- MySQL: Banco de dados para armazenar as informações dos produtos.
+- GitHub: Plataforma online para hospedar o repositório do projeto e facilitar a colaboração.
+- ReactNext: Um framework popular baseado em React que permite renderização do lado do servidor,
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Funcionalidades Principais
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+O sistema possui as seguintes funcionalidades:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- **Cadastro de Produto**: Permite adicionar novos produtos ao estoque da papelaria, incluindo nome, descrição, preço e quantidade.
+- **Alteração de Quantidade**: Permite modificar a quantidade disponível de um produto no estoque.
+- **Alteração de Preço**: Permite alterar o preço de um produto cadastrado.
+- **Listagem de Produtos**: Mostra todos os produtos cadastrados na papelaria.
+- **Exclusão de Produto**: Remove um produto do estoque da papelaria.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Instruções de Configuração
 
-## Learn More
+Para configurar e executar o projeto em sua máquina local, siga estas etapas:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Banco de Dados**:
+    - Crie um banco de dados MySQL com o nome "Papelaria".
+    - Execute o script SQL fornecido para criar a tabela "Produto".
+2. **Código-fonte**:
+    - Baixe o código-fonte do projeto.
+    - Certifique-se de ter o Python instalado em sua máquina.
+3. **Dependências**:
+    - Instale o conector MySQL para Python.
+4. **Execução**:
+    - Execute o arquivo `Rabisco.py` para iniciar o sistema.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Estrutura do Projeto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `Rabisco.py`: Contém o código-fonte principal do sistema.
 
-## Deploy on Vercel
+## Licença
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Este projeto é fornecido sob a Licença [MIT](LICENSE).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contribuições
+
+Contribuições são bem-vindas. Sinta-se à vontade para fazer um fork do repositório e abrir um Pull Request com melhorias, correções ou novos recursos.
+
+## Contato
+
+- Autor do Projeto: Ryan Kayki
+
+- Instrutor de Programação Web Front-End: Rafael Ribas
+
+- Instrutor de Programação Web Back-End: João Paulo
+
+© 2024 Papelaria Rabisco
