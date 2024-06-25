@@ -18,10 +18,9 @@ export default function Titulo(props) {
     return (
         <h1 className='display-5 text-success text-center mt-4 mb-5 fs-1'>
                 <Typewriter
-                    words={['Bem Vindos à Papelaria Rabisco!', 
-                        'Promoções incríveis', 
-                        'Que Você só encontra aqui!',
-                    'Conheça Nossos Produtos']}
+                    words={['Caso Esteja Com Algum Problema', 
+                        'Contate Nossa Equipe', 
+                        'Equipe Rabisco!']}
                     loop={1}
                     cursor
                     cursorStyle='_'

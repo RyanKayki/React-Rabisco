@@ -1,26 +1,49 @@
-export default function CardProdutos(props) {
-  return (
-    <div className="card text-center h-100">
-      <img className="card-image" src={props.img} alt={props.nome} style={{ width: '305px', height: '214px' }} />
-      <div className="card-body d-flex flex-column justify-content-between">
-        <div>
-          <h5 className="card-title">{props.nome}</h5>
-          <p className="card-text min-vh-50">{props.descricao}</p>
-        </div>
-        <div className="card-button p-3">
-          <a href="#" className="btn btn-primary">R$ {props.preco.toFixed(2)}</a>
-        </div>
-      </div>
-      <div className="card-footer">
-        <p className="card-text text-success">{props.quantidade} Unidade(s) Em Estoque</p>
-      </div>
-    </div>
-  )
-}
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Chip from '@mui/material/Chip';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
-CardProdutos.defaultProps = {
-  nome: 'Produto',
-  descricao: 'Descrição do Produto',
-  quantidade: 0,
-  preco: 0.00
+
+export default function ProductCard(props) {
+  return (
+    <Card sx={{ maxWidth: 320, boxShadow: 'lg' }}>
+      <img
+        src={props.img}
+        alt={props.nome}
+        style={{ width: '100%', height: '250px' }}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {props.nome}
+          <ArrowOutwardIcon style={{ marginRight: '5px' }} />
+        </Typography>
+        <Typography variant="body1" color="text.secondary">
+          R$ {props.preco.toFixed(2)} 
+          <Chip
+            label="Promoção"
+            size="small"
+            color="success"
+            sx={{ ml: 'auto', mr: 1 }}
+          />
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          ({props.quantidade} {props.quantidade === 1 ? 'unidade' : 'unidades'} em estoque)
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button
+          variant="contained"
+          color="error"
+          size='large'
+          style={{ width: '100%'}}
+        >
+          Adicionar ao carrinho
+        </Button>
+      </CardActions>
+    </Card>
+  );
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CardList from '@/components/CardList';
 import Headerb from '../components/Headerb';
-import Titulo from '../components/Titulo';
+import TituloProd from '../components/TituloProd';
 
 export default function Produtos() {
     const [produtos, setProdutos] = useState([]);
@@ -24,8 +24,8 @@ export default function Produtos() {
     return (
         <>
             <Headerb />
-            <Titulo texto="Conheça nossos produtos!" />
+            <TituloProd texto="Conheça nossos produtos!" />
             <CardList produtos={produtos} />
         </>
-    );
+    )
 }

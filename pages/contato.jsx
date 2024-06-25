@@ -1,13 +1,35 @@
-import React from 'react';
-import Titulo from '@/components/Titulo';
-import Headerb from '../components/Headerb';
-import styles from '../styles/Contato.module.css'
+import React, { useEffect, useState } from 'react';
+import TituloCont from '@/components/TituloCont';
+import Headerb from '@/components/Headerb'; 
+import styles from '@/styles/Contato.module.css';
+import { getContatos } from '@/services/apiContato';
+import CardListCont from '@/components/CardListCont'; 
 
-export default function Contato() {
+export default function Contatos() {
+  const [contatos, setContatos] = useState([]);
+
+  async function buscaContatos() {
+    try {
+      const data = await getContatos();
+      setContatos(data);
+    } catch (error) {
+      console.error('Erro ao buscar contatos', error);
+    }
+  }
+
+  useEffect(() => {
+    buscaContatos();
+    const atualiza = setInterval(buscaContatos, 5000); 
+    return () => {
+      clearInterval(atualiza);
+    };
+  }, []);
+
   return (
     <>
       <Headerb />
-      <Titulo texto="Entre em contato conosco!" />
+      <TituloCont texto="Entre em contato conosco!" />
+      <CardListCont contatos={contatos} />
       <div className={styles.rabiscoInfo}>
         <p>
           A Rabisco é uma papelaria encantadora que oferece uma ampla variedade de produtos para todos os amantes de arte e escrita. Localizada em um espaço acolhedor no coração da cidade, a Rabisco é conhecida por sua atmosfera inspiradora e pela qualidade de seus produtos. Desde papelaria básica até materiais de arte profissional, a loja atende às necessidades de estudantes, artistas e profissionais criativos.
