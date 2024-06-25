@@ -1,6 +1,27 @@
 import Link from 'next/link'
 import styles from '../styles/Headerb.module.css'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+
 export default function Headerb(props) {
+
+    const [busca, setBusca] = useState("")
+    // Inicializa o hook useRouter para obter informações sobre a rota atual
+    const router = useRouter()
+    
+    // Função para atualizar o estado de busca com o valor do input
+    const atualiza = (event) => {
+        setBusca(event.target.value)
+    }
+
+    // Função para lidar com o envio do formulário de busca
+    const handleSearchSubmit = (event) => {
+        // Evita a recarga da página ao enviar o formulário
+        event.preventDefault()
+        // Chama a função de busca passada via props com o termo de busca
+        props.funcao(busca)
+    }
+
     return (
         <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
             <div className="container-fluid">
@@ -25,10 +46,21 @@ export default function Headerb(props) {
                         </li>
             
                     </ul>
-                    <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                            <button className="btn btn-outline-white" type="submit">Search</button>
+                    {router.pathname == '/produtos' && (
+                        <form
+                        className="d-flex"
+                        role="search"
+                        onSubmit={handleSearchSubmit}>
+                        <input
+                            className="form-control me-2"
+                            type="search"
+                            value={busca}
+                            onChange={atualiza}
+                            placeholder="Buscar produto"
+                        />
+                        <button className="btn btn-outline-white" type="submit">Buscar</button>
                     </form>
+                    )}
                 </div>
             </div>
         </nav>

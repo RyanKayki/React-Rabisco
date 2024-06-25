@@ -1,14 +1,14 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Chip from '@mui/material/Chip';
-import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import * as React from 'react'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import CardActions from '@mui/material/CardActions'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+import Chip from '@mui/material/Chip'
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward'
+import Link from "next/link"
 
-
-export default function ProductCard(props) {
+export default function CardProdutos(props) {
   return (
     <Card sx={{ maxWidth: 320, boxShadow: 'lg' }}>
       <img
@@ -18,7 +18,7 @@ export default function ProductCard(props) {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {props.nome}
+          <Link href={`/produtos/${props.id}`}>{props.nome}</Link>
           <ArrowOutwardIcon style={{ marginRight: '5px' }} />
         </Typography>
         <Typography variant="body1" color="text.secondary">
